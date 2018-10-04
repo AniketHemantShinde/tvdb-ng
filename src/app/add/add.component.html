@@ -1,13 +1,27 @@
-<div class="container">
+<!-- <div class="container">
     <div class="card">
         <div class="card-header">
           ADD TV SHOW
         </div>
         <div class="card-body">
           <h5 class="card-title">Name</h5>
-          <input class="card-text" type="text" placeholder="Enter Tv Show name">
-          <a href="#" class="btn btn-primary">Add</a>
+          <input class="card-text" type="text" [(ngModel)]="showName" placeholder="Enter Tv Show name">
+          <a (click)="search()" class="btn btn-primary">Search</a>
+          <!-- <a (mouseover)="print()"  (click)="search()" [href]="dynamicUrl" class="btn btn-primary">Search</a> -->
+          <!-- <button type="button" [disabled]="isDisabled">Submit</button> 
+          {{showName}}
         </div>
       </div>
-
+{{shows$}}
+<div>
+  <ul>
+    <li *ngFor="let show of shows$">{{show.seriesname}}</li>
+  </ul>
+  <app-search-list></app-search-list>
 </div>
+</div> -->
+<!-- <p>Add Component</p> -->
+<app-search-list (searchTermChanged)="updateSearch($event)"></app-search-list>
+<app-show-list [shows]="shows$">
+
+</app-show-list>
